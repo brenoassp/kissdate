@@ -2,10 +2,7 @@
 GOPATH=$(shell go env GOPATH)
 PATH=$(GOPATH)/bin:$(shell echo $$PATH)
 lint_confidence=0.9
-min_coverage=72
 path=./...
-steps=0
-op=up
 
 -include config.env
 export
