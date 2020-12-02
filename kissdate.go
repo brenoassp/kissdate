@@ -17,7 +17,7 @@ func NewClient() Client {
 //
 // where adding a month to Jan 30 would not get Feb 28
 func (c Client) AddDate(date time.Time, y, m, d int) time.Time {
-	expectedMonth := date.Month() + time.Month(m%12)
+	expectedMonth := (date.Month()+time.Month(m)-1)%12 + 1
 
 	date = date.AddDate(y, m, 0)
 
